@@ -1,4 +1,4 @@
-cd# Ex02 Django ORM Web Application
+# Ex02 Django ORM Web Application
 ## Date: 04.11.24
 
 ## AIM
