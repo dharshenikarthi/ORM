@@ -1,12 +1,11 @@
 cd# Ex02 Django ORM Web Application
-## Date: 1.11.24
+## Date: .11.24
 
 ## AIM
 To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
-
-![alt text](FChart.png)
+![alt text](FLOWCHART.png)
 
 
 ## DESIGN STEPS
@@ -28,19 +27,24 @@ Execute Django admin and create details for 10 books
 admin.py
 
 from django.contrib import admin
-from .models import Student,StudentAdmin
-admin.site.register(Student,StudentAdmin)
+from.models import Bank,BankAdmin
+admin.site.register(Bank,BankAdmin)
 
 models.py
 
-from django.db import models
+from django .db import models
 from django.contrib import admin
-class Student(models.Model):
-	Name=models.CharField(max_length=10)
-	Refno=models.IntegerField(primary_key="Refno")
-	percentage=models.FloatField()
-	DoB=models.DateField()
-	Email=models.EmailField()
+class Bank(models.Model):
+  name=models.CharField(max_length=50)
+  accountno=models.IntegerField(primary_key="accountno")
+  dob=models.DateField()
+  aadharno=models.IntegerField()
+  email=models.EmailField() 
+  branch=models.CharField(max_length=21)
+  photo=models.ImageField()
+
+class BankAdmin(admin.ModelAdmin):
+ list_display=('name','accountno','aadharno','dob','email','branch','photo')
 	
 class StudentAdmin(admin.ModelAdmin):
 	list_display=('Name','Refno','percentage','DoB','Email')
@@ -48,8 +52,7 @@ class StudentAdmin(admin.ModelAdmin):
 
 
 ## OUTPUT
-
-![alt text](<Screenshot 2024-11-01 040643.png>)
+![alt text](<Screenshot 2024-11-04 225522.png>)
 
 
 
